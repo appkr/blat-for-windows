@@ -1,0 +1,294 @@
+<html>
+<head>
+<title>blat.exe 사용법</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border=1 cellpadding=4 cellspacing=1 width=90% align=center>
+  <tr> 
+    <td bgcolor=f1f4ee align=right nowrap><font size=-1 color=474747><b> 제목 </b></font></td>
+    <td bgcolor=f1f4ee><font size=-1> blat.exe 사용법</font></td>
+  </tr>
+  <tr> 
+    <td bgcolor=f1f4ee align=right nowrap><font size=-1 color=474747><b> 보낸날짜 
+      </b></font></td>
+    <td bgcolor=f1f4ee><font size=-1> Mon, 19 Feb 2001 15:43:02 KST </font></td>
+  </tr>
+  <tr> 
+    <td bgcolor=f1f4ee align=right nowrap><font size=-1 color=474747><b> 보낸이 </b></font></td>
+    <td bgcolor=f1f4ee><font size=-1> <a href="_send_mail.form.cgi?TO=%22%B1%E8%C1%D6%BF%F8%22+%3Csuchcool%40hanmail%2Enet%3E" class=bls0>&quot;김주원&quot; 
+      &lt;suchcool@hanmail.net&gt;</a> </font></td>
+  </tr>
+  <tr> 
+    <td bgcolor=f1f4ee align=right nowrap><font size=-1 color=474747><b> 받는이 </b></font></td>
+    <td bgcolor=f1f4ee><font size=-1> suchcool@kornet.net </font></td>
+  </tr>
+  <tr> 
+    <td bgcolor=f1f4ee align=right nowrap><font size=-1 color=474747><b> 소속기관 
+      </b></font></td>
+    <td bgcolor=f1f4ee><font size=-1> GSP </font></td>
+  </tr>
+  <tr> 
+    <td colspan=2 bgcolor=ffffff><font size=-1> <br>
+      배포처 : <a href="http://www.webweaver.pe.kr" target=nlink>http://www.webweaver.pe.kr</a> 
+      <br>
+      배포자 : KimJuWon (<a href="/Mail-bin/_send_mail.form.cgi?TO=i@webweaver.pe.kr">i@webweaver.pe.kr</a>) 
+      <br>
+      배포일 : 2001/02/20 <br>
+      버전정보 : blat 1.8.6 (compiled in EUC-KR) <br>
+      <br>
+      Note. 설치와 사용에 관한 질문은 절대 받지 않습니다. <br>
+      편의상 경어를 생략합니다. <br>
+      ########################################################################## 
+      <br>
+      <br>
+      <b>목차 </b><br>
+      <br>
+      <b><a href="#1">■ blat 이란?</a> <br>
+      <a href="#2">■ 특징/기능 </a><br>
+      <a href="#3">■ 요구사항</a> <br>
+      <a href="#4">■ 설치법 </a><br>
+      <a href="#5">■ 사용법 </a><br>
+      <a href="#6">■ CGI(Perl) 프로그램에서 사용법 </a><br>
+      <a href="#7">■ 문제해결 </a></b><br>
+      <br>
+      <br>
+      <br>
+      <b>■ blat 이란? :<a name="1"></a> </b><br>
+      <br>
+      blat 은 윈도우계열(윈도우NT, 2000, 윈98, 윈미) 코맨드라인에서 동작하는 <br>
+      메일러이다. blat을 사용하기 위해서는 반드시 tcp/ip와 smtp를 사용할 수 있는 <br>
+      환경이어야 한다. <br>
+      <br>
+      배포자는 단지 이 '설명서 제작'과 소스파일의 'charset를 EUC-KR를 수정'하여, <br>
+      컴파일 한것외에는 한것이 없으므로, 이 프로그램의 사용으로 인하여 발생하는 <br>
+      손실이나 문제에 대하여 전혀 책임지지 않는다. <br>
+      <br>
+      <br>
+      <br>
+      <b>■ 특징/기능 :<a name="2"></a> </b><br>
+      <br>
+      - 메일내용을 한글로 발송시 글씨가 깨져서 나오던 문제 해결 <br>
+      - cc, bcc, 파일첨부 등 모든 기능을 지원 <br>
+      - html형식의 메일보내기 완벽 지원 <br>
+      <br>
+      <br>
+      <br>
+      <b>■ 요구사항 : </b><a name="3"></a><br>
+      <br>
+      - tcp/ip, 즉 인터넷을 사용할 수 있는 환경이어야 한다. <br>
+      - smtp(Simple Mail Transfer Protocol)을 사용할 수 있는 환경이어야 한다. <br>
+      <br>
+      자신의 컴퓨터가 고정 ip를 사용하고 있고, 윈도우 NT 계열을 사용하고 있다면, <br>
+      인터넷서비스관리자(MMC)와 도메인관리자에서 smtp를 설정할 수 있다. <br>
+      <br>
+      윈도우 NT/2000을 사용하고 있으나, 유동 ip를 사용하거나, smtp서버가 <br>
+      설치되어 있지 않은 경우, 또는 윈98/ME를 사용하는 경우에는 <br>
+      자신의 isp의 smtp서버를 사용한다. 예를 들면, 자신이 코넷망을 사용하고 있다면 <br>
+      smtp 서버는 mail.kornet.net이 될것이다. <br>
+      <br>
+      - 윈도우 계열의 운영체제에서만 동작한다. <br>
+      <br>
+      <br>
+      <br>
+      <b>■ 설치법 : </b><a name="4"></a><br>
+      <br>
+      - c:\blat 이란 디렉토리를 만들고, 압축을 푼다. <br>
+      - 방금 만든 디렉토리에 blat.exe란 파일이 있어야 한다. <br>
+      - gensok.dll파일을 윈도우의 system 또는 system32(NT/2000)에 복사한다. <br>
+      만일, 최신의 gensok.dll파일이 이미 설치되어 있다면, 취소하라. <br>
+      아마, 거의 대부분이 이부분은 생략해도 될 것이다. <br>
+      <br>
+      - 도스창을 연다. blat 이 설치되 디렉토리로 이동. <br>
+      - blat -install mail.abc.com <a href="/Mail-bin/_send_mail.form.cgi?TO=xxx@abc.com">xxx@abc.com</a> 
+      <br>
+      예를 들어 코넷을 사용한다면, blat -install mail.kornet.net <a href="/Mail-bin/_send_mail.form.cgi?TO=xxx@kornet.net">xxx@kornet.net</a> 
+      <br>
+      이 될것이다. <br>
+      만약 자신의 smtp서버를 가지고 있다면, 주소가 smtp.korea.co.kr이고, 메일계정이 <br>
+      <a href="/Mail-bin/_send_mail.form.cgi?TO=webmaster@korea.co.kr">webmaster@korea.co.kr</a>이라고 
+      한다면, <br>
+      blat -install smtp.korea.co.kr <a href="/Mail-bin/_send_mail.form.cgi?TO=webmaster@korea.co.kr">webmaster@korea.co.kr</a>이라고 
+      하면 될것이다. <br>
+      <br>
+      - 윈98/ME의 경우는 autoexec.bat 파일을 열고, <br>
+      path=c:\blat; 의 경로를 수정해 준다. <br>
+      <br>
+      - 윈도우 NT/2000의 경우 내컴퓨터의 환경변수 path부분, 수정을 클릭하고 <br>
+      blat의 설치경로를 추가해 준다. 재부팅 <br>
+      <br>
+      <br>
+      <br>
+      <b>■ 사용법 : </b><a name="5"></a><br>
+      <br>
+      syntax: <br>
+      Blat &lt;filename&gt; -t &lt;recipient&gt; [option] <br>
+      <br>
+      &lt;filename&gt; : 보낼 내용이 저장된 파일, 직접 콘솔입력 경우 -, 끝낼때는 ^Z <br>
+      -t &lt;recipient&gt; : 받는사람의 메일, 여러명에게 보낼 경우 comma 사용, quote 해주는 것이 좋음 <br>
+      -s &lt;subj&gt; : 중간에 공백문자가 있을 경우 반드시 quote (&quot;)해 줘야 한다. <br>
+      -f &lt;sender&gt; : 보내는 사람의 메일 <br>
+      -cc &lt;recipient&gt;: 참조, 여러명에게 보낼 경우 comma 사용, quote 해주는 것이 좋음 <br>
+      -bcc &lt;recipient&gt;: 숨은 참조, 여러명에게 보낼 경우 comma 사용, quote 해주는 것이 좋음 <br>
+      -r : 읽음 확인 <br>
+      -h : 도움말 <br>
+      -server &lt;addr&gt; : smtp 기본서버를 바꿔서 보낼 경우 <br>
+      -port &lt;port&gt; : smtp 포트, 기본은 25 <br>
+      -mime : MIME Quoted-Printable Content-Transfer-Encoding. <br>
+      -enriched : Content-Type=text/enriched 의 메시지를 보낼 경우 <br>
+      -html : Content-Type=text/html, html형식의 메시지를 보낼 경우 <br>
+      -base64 : base64 (binary Mime) 타입의 파일을 보낼 경우 <br>
+      -attach &lt;file&gt; : 바이너리 파일 첨부, 여러개일 경우 여러번 반복해서 쓴다. <br>
+      -attacht &lt;file&gt;: 텍스트 파일 첨부, 여러개일 경우 여러번 반복해서 쓴다. <br>
+      <br>
+      도스창을 열고 아래와 같이 테스트 해보라. <br>
+      <br>
+      blat myfile.txt -s &quot;A file for pedro&quot; -t <a href="/Mail-bin/_send_mail.form.cgi?TO=foo@bar.com">foo@bar.com</a> 
+      <br>
+      //myfile.txt의 내용을 A file for pedro란 제목으로 <a href="/Mail-bin/_send_mail.form.cgi?TO=foo@bar.com">foo@bar.com</a>에게 
+      보낸다. <br>
+      //이때, 보낸 사람은 -install할때 쓴 메일 주소가 된다. <br>
+      <br>
+      blat myfile.txt -s &quot;A file for pedro&quot; -t <a href="/Mail-bin/_send_mail.form.cgi?TO=foo@bar.com">foo@bar.com</a> 
+      -q <br>
+      //-q 옵션은 화면에 결과를 출력하지 않을때 사용, 별 쓸모 없음. <br>
+      <br>
+      blat myfile.txt -s &quot;A file for mark&quot; -t <a href="/Mail-bin/_send_mail.form.cgi?TO=fee@fi.com">fee@fi.com</a> 
+      -f <a href="/Mail-bin/_send_mail.form.cgi?TO=foo@bar.com">foo@bar.com</a> 
+      <br>
+      //기본 보내는 사람을 무시하고, 보낸사람이 <a href="/Mail-bin/_send_mail.form.cgi?TO=foo@bar.com">foo@bar.com</a>이 
+      된다. <br>
+      <br>
+      Blat myfile.txt -s &quot;animals&quot; -t <a href="/Mail-bin/_send_mail.form.cgi?TO=fee@fi.com">fee@fi.com</a> 
+      -cc &quot;<a href="/Mail-bin/_send_mail.form.cgi?TO=moo@grass.edu">moo@grass.edu</a>,<a href="/Mail-bin/_send_mail.form.cgi?TO=horse@meadow.hill">horse@meadow.hill</a>&quot; 
+      <br>
+      //<a href="/Mail-bin/_send_mail.form.cgi?TO=moo@grass.edu">moo@grass.edu</a>,<a href="/Mail-bin/_send_mail.form.cgi?TO=horse@meadow.hill">horse@meadow.hill</a>에게도 
+      참조메일을 보낸다. <br>
+      <br>
+      blat.exe BLAT.ZIP -s &quot;file to gil&quot; -t <a href="/Mail-bin/_send_mail.form.cgi?TO=foo@bar.com">foo@bar.com</a> 
+      -base64 <br>
+      //MIME Base 64 format으로 blat.zip파일을 보낸다. <br>
+      <br>
+      blat myfile.txt -s &quot;oumpla&quot; -t <a href="/Mail-bin/_send_mail.form.cgi?TO=foo@bar.com">foo@bar.com</a> 
+      -attach c:\myfolder\*.txt <br>
+      //myfile.txt의 내용을 oumpla라는 제목으로 <a href="/Mail-bin/_send_mail.form.cgi?TO=foo@bar.com">foo@bar.com</a>에게 
+      c:\myfolder\*.txt <br>
+      //파일을 첨부해서 보낸다. <br>
+      //c:\myfolder\*.*으로 쓰면 모든 파일을 보낸다. <br>
+      <br>
+      blat myfile.txt -t <a href="/Mail-bin/_send_mail.form.cgi?TO=fee@fi.com">fee@fi.com</a> 
+      -server smtp.domain.com -port 6000 <br>
+      <br>
+      <br>
+      <b><br>
+      ■ CGI(Perl) 프로그램에서 사용법 : </b><a name="6"></a><br>
+      <br>
+      위의 사용법을 잘 보았다면, cgi프로그램에서 사용하는 데 별무리가 없을거라 생각한다. <br>
+      <br>
+      ## 메일 보낼 내용을 $comments란 변수에 저장한다. <br>
+      $comments = &quot; <br>
+      &lt;html&gt; <br>
+      &lt;head&gt; <br>
+      &lt;/head&gt; <br>
+      &lt;body&gt; <br>
+      &lt;div align=center&gt; <br>
+      &lt;table width=80% border=0 cellspacing=0 cellpadding=0&gt; <br>
+      &lt;tr&gt; <br>
+      &lt;td bgcolor=black&gt;$FORM{'subject'}&lt;/td&gt; <br>
+      &lt;/tr&gt; <br>
+      &lt;/table&gt; <br>
+      &lt;/div&gt;&quot;; <br>
+      <br>
+      ## $comments변수에, html form인, content에서 받은 내용을 더한다. <br>
+      ## . 연산자에 유의하라. 문자열을 합치는 연산자 이다. <br>
+      $comments .= &quot;$FORM{'content'}&quot;; <br>
+      <br>
+      ## $comments변수에 아래 내용을 더한다. <br>
+      $comments .= &quot; <br>
+      &lt;/body&gt; <br>
+      &lt;/html&gt;&quot;; <br>
+      <br>
+      ## blat의 경로를 지정한다. 만약 이미 시스템에서 경로가 지정되어 있을 경우에는 <br>
+      ## blat이라고만 써도 된다. 그리고 c:다음에 역슬래쉬 두개를 씀에 유의하라. <br>
+      ## 앞에것은 단지 escape 문자의 역할을 한다. <br>
+      $SENDMAIL = &quot;c:\\blat\\blat&quot;; <br>
+      ## 받는 사람에 tomail이란 폼에서 받은내용을 저장한다. <br>
+      $t = &quot;-t $FORM{'tomail'}&quot;; <br>
+      ## 제목에 subject란 폼에서 받은내용을 저장한다. <br>
+      $s = &quot;-s \&quot;$FORM{'subject'}\&quot;&quot;; <br>
+      ## 보내는 사람에 frommail이란 폼에서 받은내용을 저장한다. <br>
+      $f = &quot;-f $FORM{'frommail'}&quot;; <br>
+      ## 메일 발송결과를 저장할 파일, 문제발생시 디버그 정보로 유용하다. <br>
+      $LOG = &quot;process.log&quot;; <br>
+      <br>
+      ## 임시로 $comments 변수의 내용을 저장할 파일, 이것이 실제 메일 내용이 된다. <br>
+      $file = &quot;temp.txt&quot;; <br>
+      <br>
+      open(OUTPUT, &quot;&gt;$file&quot;); <br>
+      print OUTPUT &quot;$comments\n&quot;; <br>
+      close(OUTPUT); <br>
+      <br>
+      $commandline = &quot;$SENDMAIL $file $s $t $f -html \&gt; $LOG&quot;; <br>
+      <br>
+      ## 역 따옴표에 유의하라. 코맨드라인에서 실행하라는 의미다. <br>
+      ## 대신 system()함수를 사용해도 된다. 방법은 system($commandline); <br>
+      `$commandline`; <br>
+      <br>
+      ## 문제발생의 아래의 두라인은 주석처리하고, 문제를 해결하라. <br>
+      unlink($file); <br>
+      unlink($LOG); <br>
+      <br>
+      <br>
+      <br>
+      <b>*** Win32::Process 펄 모듈을 사용할 경우 : *** </b><br>
+      <br>
+      ## 윈도우 NT계열에서는 Process를 사용하는 것이 훨씬 안정적이다. <br>
+      ## 메일링 리스트등에 blat을 사용할 경우는 반드시 이렇게 하라. <br>
+      <br>
+      <br>
+      ## 루틴시작 <br>
+      ... <br>
+      ... <br>
+      <br>
+      $commandline = &quot;$SENDMAIL $file $s $t $f -html \&gt; $LOG&quot;; <br>
+      <br>
+      use Win32::Process; <br>
+      use Win32; <br>
+      <br>
+      Win32::Process::Create($ProcessObj, $SENDMAIL, &quot;$commandline&quot;, 
+      0, DETACHED_PROCESS, &quot;.&quot;) || die ErrorReport(); <br>
+      <br>
+      $ProcessObj-&gt;Wait(INFINITE); <br>
+      unlink($file); <br>
+      unlink($LOG); <br>
+      ## 루틴끝 <br>
+      <br>
+      <br>
+      ## Win32::Process 의 에러보고를 위한 루틴 <br>
+      sub ErrorReport { <br>
+      print Win32::FormatMessage(Win32::GetLastError()); <br>
+      } <br>
+      <br>
+      <br>
+      <br>
+      <b>■ 문제해결 :</b><a name="7"></a><br>
+      <br>
+      - 아직까지 2주일동안 사용해본 결과 별 문제가 없었다. <br>
+      (WinNT, Apache 1.3.9, ActivePerl 5.60, <a href="http://gsp.kyunghee.ac.kr" target=nlink>http://gsp.kyunghee.ac.kr</a>) 
+      <br>
+      (Win2000, IIS 5.0, ActivePerl 5.5, localhost 개발환경) <br>
+      - Apache 에서 사용할 경우 malformed header 에러가 나는 경우는 <br>
+      system()함수를 사용하지 말고, `` 역따옴표 코맨드라인을 사용해 보라. <br>
+      <br>
+      <br>
+      <br>
+      끝. 편의상 경어를 생략했습니다. 양해바랍니다. <br>
+      <br>
+      ########################################################################## 
+      <p> <img src="http://image.hanmail.net/hanmail/s_img/stock/trans.gif" width=1 height=12><br>
+      </font></td>
+  </tr>
+</table>
+</body>
+</html>
